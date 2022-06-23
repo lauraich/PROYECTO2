@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FincaComponent } from './finca.component';
+import { ControladorComponent } from './controlador.component';
+import { FincaComponent } from './finca/finca.component';
 
 const routes: Routes = [{
   path: '',
-  pathMatch: 'full',
-  component: FincaComponent
+  component: ControladorComponent,
+  children: [
+    {
+      path: 'lote/:idLote',
+      loadChildren: () => import('./lote/lote.module').then(m => m.LoteModule),
+    },
+    {
+      path: '',
+      pathMatch: 'full',
+      component: FincaComponent
+    },
+    {
+      path: '**',
+      redirectTo: '',
+    }
+  ]
 }];
 
 @NgModule({

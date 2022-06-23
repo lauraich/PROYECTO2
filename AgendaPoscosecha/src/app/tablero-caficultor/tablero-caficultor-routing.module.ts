@@ -9,18 +9,16 @@ const routes: Routes = [
     component: TableroCaficultorComponent,
     children: [
       {
-        path: 'finca/:idFinca',
-        pathMatch: 'full',
-        loadChildren: () => import('./finca/finca.module').then(m => m.FincaModule),
-      },
-      {
         path: 'fincas',
         pathMatch: 'full',
         component: FincasComponent,
       },
       {
+        path: 'finca/:idFinca',
+        loadChildren: () => import('./finca/finca.module').then(m => m.FincaModule),
+      },
+      {
         path: '**',
-        pathMatch: 'full',
         redirectTo: 'fincas'
       }
     ]
