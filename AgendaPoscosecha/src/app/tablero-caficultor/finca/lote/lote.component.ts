@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -16,11 +17,9 @@ export class LoteComponent implements OnInit {
     this.route.params.subscribe(param => {
       this.idLote = param['idLote']
     })
-
   }
 
   enNavegar(ruta: string) {
     this.router.navigate([ruta], { relativeTo: this.route });
   }
-
 }

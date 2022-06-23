@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,10 @@ export class AppComponent implements OnInit {
 
   rol!: string;
 
-  constructor(private readonly router: Router) { }
+  constructor(private readonly router: Router, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
     this.rol = 'caficultor'
     console.log('desde app')
     //Se pide los permisos del rol por parte del servicio y se mueve al correspondiente modulo
