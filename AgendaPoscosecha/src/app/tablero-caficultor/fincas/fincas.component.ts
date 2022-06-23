@@ -13,8 +13,8 @@ export class FincasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enFinca(finca: string){
-    this.router.navigate(['../finca', finca], { relativeTo: this.route });
+  enFinca(idFinca: string){
+    this.router.navigate(['../finca', idFinca], { relativeTo: this.route });
   }
 
 }

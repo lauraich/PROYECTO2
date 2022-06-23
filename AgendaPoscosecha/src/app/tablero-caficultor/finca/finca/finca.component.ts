@@ -8,13 +8,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FincaComponent implements OnInit {
 
-  nombreFInca!: string
+  idFinca!: string;
 
-  constructor(private readonly router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(async params => {
-      this.nombreFInca = params['idFinca'];
+    this.route.params.subscribe(param => {
+      this.idFinca = param['idFinca']
     })
   }
 
