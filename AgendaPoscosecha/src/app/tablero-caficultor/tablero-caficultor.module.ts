@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TableroCaficultorRoutingModule } from './tablero-caficultor-routing.module';
 import { TableroCaficultorComponent } from './tablero-caficultor.component';
 import { FincasComponent } from './fincas/fincas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FincasComponent } from './fincas/fincas.component';
   ],
   imports: [
     CommonModule,
-    TableroCaficultorRoutingModule
+    TableroCaficultorRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TableroCaficultorModule { }
