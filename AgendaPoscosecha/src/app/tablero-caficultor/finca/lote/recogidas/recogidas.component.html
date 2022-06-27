@@ -1,5 +1,0 @@
-<button pButton label="Nueva poscosecha" (click)="mostrarDialogoRec = !mostrarDialogoRec"></button>
-<p *ngFor="let rec of recolectas">{{rec}}</p>
-
-<app-agregar-recogida [mostrar]="mostrarDialogoRec" (agregarPoscosecha)="agregarRecolecta($event)">
-</app-agregar-recogida>
